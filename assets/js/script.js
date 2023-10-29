@@ -2,7 +2,7 @@ var timeEl = document.querySelector(".time");
 
 var mainEl = document.getElementById("main");
 
-var secondsLeft = 1;
+var secondsLeft = 3;
 
   function setTime() {
     var timerInterval = setInterval(function() {
@@ -19,7 +19,8 @@ var secondsLeft = 1;
   function sendcomplete() {
     timeEl.textContent = " ";
     var endalert = document.createElement("p");
-    endalert.setAttribute =""
+    endalert.setAttribute("class","alert");
+    endalert.setAttribute("style","text-align:right")
     endalert.innerHTML += 'Times Up! Please refresh page and try again.';
     mainEl.appendChild(endalert);
   
