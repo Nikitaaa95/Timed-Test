@@ -2,7 +2,7 @@ var timeEl = document.querySelector(".time");
 
 var mainEl = document.getElementById("main");
 
-var secondsLeft = 75;
+var secondsLeft = 1;
 
   function setTime() {
     var timerInterval = setInterval(function() {
@@ -11,9 +11,18 @@ var secondsLeft = 75;
   
       if(secondsLeft === 0) {
         clearInterval(timerInterval);
+        sendcomplete();
       }
   
     }, 1000);
+  }
+  function sendcomplete() {
+    timeEl.textContent = " ";
+    var endalert = document.createElement("p");
+    endalert.setAttribute =""
+    endalert.innerHTML += 'Times Up! Please refresh page and try again.';
+    mainEl.appendChild(endalert);
+  
   }
   setTime();
 //Header Items
