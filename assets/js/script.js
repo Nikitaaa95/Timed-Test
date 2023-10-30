@@ -7,7 +7,7 @@ var answersEl = document.getElementById("answers");
 var scorealertEl = document.getElementById("scorealert")
 
 
-var secondsLeft = 10;
+var secondsLeft = 75;
 var currentscore = 0;
 
 
@@ -19,7 +19,7 @@ var currentscore = 0;
       secondsLeft--;
       timeEl.textContent = "Time Remaining:" + secondsLeft;
   
-      if(secondsLeft === 0) {
+      if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         sendcomplete();
       }
@@ -120,6 +120,17 @@ scorealertEl.appendChild(currentscoreEl);
                 nextQuestion();
             } 
             else {
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+                secondsLeft--;
+
                 //create alert
             }
         
