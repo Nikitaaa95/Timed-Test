@@ -39,4 +39,9 @@ button {
     padding: 5px white;
     border-radius: 5px;
 }
+
+hr {
+    border-color: var(--purple);
+    border-width: .5px;
+}
 /* if time, you can center the text later */
