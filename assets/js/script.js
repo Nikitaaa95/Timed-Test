@@ -66,30 +66,27 @@ var QuestionContent = [{
 }]
 
 
-    var currentscoreEl = document.createElement("h3");
-currentscoreEl.textContent = "Current Score:" + currentscore;
-currentscoreEl.setAttribute("style", "text-align:right");
-scorealertEl.appendChild(currentscoreEl); 
 
 
 ////
-var currQuestion = 0
+var curQuestion = 0
 var score = 0
 
 function callQues() { 
-    questionsEl.textContent = QuestionContent[currQuestion].q;
+    questionsEl.textContent = QuestionContent[curQuestion].q;
     answersEl.innerHTML = ""
  
-    for (let i = 0; i < QuestionContent[currQuestion].a.length; i++) {
+    for (let i = 0; i < QuestionContent[curQuestion].a.length; i++) {
         const choicesdiv = document.createElement("div");
         const choice = document.createElement("input");
         const choiceLabel = document.createElement("label");
+        choiceLabel.setAttribute("class", "answers")
  
-        choice.type = "select";
+        choice.type = "radio";
         choice.name = "answer";
         choice.value = i;
  
-        choiceLabel.textContent = QuestionContent[currQuestion].a[i].text;
+        choiceLabel.textContent = QuestionContent[curQuestion].a[i].text;
  
         choicesdiv.appendChild(choice);
         choicesdiv.appendChild(choiceLabel);
@@ -100,37 +97,44 @@ var quizstarter = document.querySelector("#startquiz");
 quizstarter.addEventListener("click", function() {
 callQues();
 var desEl = document.getElementById("quizsum");
-    desEl.remove();})
+    desEl.remove();
+var SUBMIT = document.createElement("button");
+var buttonEl = document.getElementById("buttonspace")
+SUBMIT.setAttribute("id", "SUBMIT");
+SUBMIT.setAttribute("class", "SUBMIT")
+SUBMIT.textContent = "Submit";
+buttonEl.appendChild(SUBMIT);
+
+
+    SUBMIT.addEventListener("click", function() {
+        const selection = parseInt(document.querySelector('input[name="answer"]:checked').value);
+         
+            if (QuestionContent[curQuestion].a[selection].Accuracy) {
+                console.log("Correct");
+                currentscore++;
+                var currentscoreEl = document.createElement("h3");
+currentscoreEl.textContent = "Current Score:" + currentscore;
+currentscoreEl.setAttribute("style", "text-align:right");
+scorealertEl.appendChild(currentscoreEl); 
+                //create alert
+                nextQuestion();
+            } 
+            else {
+                //create alert
+            }
+        
  
-// function loadScore() {
-//     const totalScore = document.getElementById("score")
-//     totalScore.textContent = `You scored ${score} out of ${Questions.length}`
-// }
  
- 
-// function nextQuestion() {
-//     if (currQuestion < Questions.length - 1) {
-//         currQuestion++;
-//         loadQues();
-//     } else {
-//         document.getElementById("opt").remove()
-//         document.getElementById("ques").remove()
-//         document.getElementById("btn").remove()
-//         loadScore();
-//     }
-// }
- 
-// function checkAns() {
-//     const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
- 
-//     if (Questions[currQuestion].a[selectedAns].isCorrect) {
-//         score++;
-//         console.log("Correct")
-//         nextQuestion();
-//     } else {
-//         nextQuestion();
-//     }
-// }
+function nextQuestion() {
+    if (curQuestion < QuestionContent.length - 1) {
+        curQuestion++;
+        callQues();
+    } else {
+        questionsEl.remove();
+        answersEl.remove();
+    }
+}})})
+
 
 
   

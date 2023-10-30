@@ -28,14 +28,15 @@ button {
     border: none;
 }
 
-li {
+
+.answers {
     width: 200px;
     background-color: var(--pink);
     color: var(--purple);
     font-weight: bold;
     list-style: none;
     margin: 12px;
-    padding: 2px;
+    padding: 5px white;
     border-radius: 5px;
 }
 /* if time, you can center the text later */
