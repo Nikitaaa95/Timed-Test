@@ -17,3 +17,14 @@
     color:var(--purple);
     font-weight: bold;
 }
+
+button {
+    height: 35px;
+    width: 75px;
+    color: var(--purple);
+    font-weight: bold; 
+    background-color: var(--pink);
+    border-radius: 25px;
+    border: none;
+}
+/* if time, you can center the text later */
