@@ -1,0 +1,26 @@
+
+  var quizstarter = document.querySelector("#startquiz");
+  quizstarter.addEventListener("click", function() {
+    var desEl = document.getElementById("quizsum");
+    desEl.remove();
+    var question1 = document.createElement("h2");
+    question1.textContent = "1) Commonly used data types DO NOT include:";
+    questionsEl.appendChild(question1);
+    var answers1 = document.createElement("ul");
+    answersEl.appendChild(answers1);
+    var answersopta1 = document.createElement("li");
+    answersopta1.setAttribute("class", "false")
+    answersopta1.textContent = "a. strings";
+    answersEl.appendChild(answersopta1)
+    var answersoptb1 = document.createElement("li");
+    answersoptb1.setAttribute("class", "false")
+    answersoptb1.textContent = "b. booleans";
+    answersEl.appendChild(answersoptb1)
+    var answersoptc1 = document.createElement("li");
+    answersopta1.setAttribute("id", "c1");
+    answersoptc1.textContent = "c. alerts";
+    answersEl.appendChild(answersoptc1);
+    var answersoptd1 = document.createElement("li");
+    answersopta1.setAttribute("class", "false");
+    answersoptd1.textContent = "d. numbers";
+    answersEl.appendChild(answersoptd1);

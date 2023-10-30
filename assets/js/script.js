@@ -37,44 +37,102 @@ var currentscore = 0;
   }
   setTime();
 
-  var quizstarter = document.querySelector("#startquiz");
-  quizstarter.addEventListener("click", function() {
-    var desEl = document.getElementById("quizsum");
-    desEl.remove();
-    var question1 = document.createElement("h2");
-    question1.textContent = "1) Commonly used data types DO NOT include:";
-    questionsEl.appendChild(question1);
-    var answers1 = document.createElement("ul");
-    answersEl.appendChild(answers1);
-    var answersopta1 = document.createElement("li");
-    answersopta1.setAttribute("id", "a1")
-    answersopta1.textContent = "a. strings";
-    answersEl.appendChild(answersopta1)
-    var answersoptb1 = document.createElement("li");
-    answersoptb1.setAttribute("id", "b1")
-    answersoptb1.textContent = "b. booleans";
-    answersEl.appendChild(answersoptb1)
-    var answersoptc1 = document.createElement("li");
-    answersopta1.setAttribute("id", "c1")
-    answersoptc1.textContent = "c. alerts";
-    answersEl.appendChild(answersoptc1)
-    var answersoptd1 = document.createElement("li");
-    answersopta1.setAttribute("id", "d1")
-    answersoptd1.textContent = "d. numbers";
-    answersEl.appendChild(answersoptd1);
+var QuestionContent = [{
+    q: "1) Commonly used data types DO NOT include:",
+    a: [{ text: "a) strings", Accuracy: false },
+    { text: "b) booleans", Accuracy: false },
+    { text: "c) alerts", Accuracy: true },
+    { text: "d) numbers", Accuracy: false }
+    ]
+ 
+},
+{
+    q: "The condition in an if/else statement is enclosed within ____. ",
+    a: [{ text: "a) quotes", Accuracy: false},
+    { text: "b) curly brackets", Accuracy: false},
+    { text: "c) parentheses", Accuracy: true},
+    { text: "d) square brackets", Accuracy: false}
+    ]
+ 
+},
+{
+    q: "Arrays in JavaScript can be used to store ______.",
+    a: [{ text: "a) numbers and strings", Accuracy: true },
+    { text: "b) other arrays", Accuracy: false },
+    { text: "c) booleans", Accuracy: false },
+    { text: "d) all of the above", Accuracy: false }
+    ]
+ 
+}]
+
 
     var currentscoreEl = document.createElement("h3");
 currentscoreEl.textContent = "Current Score:" + currentscore;
 currentscoreEl.setAttribute("style", "text-align:right");
 scorealertEl.appendChild(currentscoreEl); 
-  })
 
-// var trueEl = document.querySelector("#a1 #b1 #d1")
-// trueEl.addEventListener("click", function () {
-// currentscore++
-// scorealertEl.innerHTML("Correct!")
-// })
-// var falseEL = document.querySelector(".false")
+
+////
+var currQuestion = 0
+var score = 0
+
+function callQues() { 
+    questionsEl.textContent = QuestionContent[currQuestion].q;
+    answersEl.innerHTML = ""
+ 
+    for (let i = 0; i < QuestionContent[currQuestion].a.length; i++) {
+        const choicesdiv = document.createElement("div");
+        const choice = document.createElement("input");
+        const choiceLabel = document.createElement("label");
+ 
+        choice.type = "select";
+        choice.name = "answer";
+        choice.value = i;
+ 
+        choiceLabel.textContent = QuestionContent[currQuestion].a[i].text;
+ 
+        choicesdiv.appendChild(choice);
+        choicesdiv.appendChild(choiceLabel);
+        answersEl.appendChild(choicesdiv);
+    }
+}
+var quizstarter = document.querySelector("#startquiz");
+quizstarter.addEventListener("click", function() {
+callQues();
+var desEl = document.getElementById("quizsum");
+    desEl.remove();})
+ 
+// function loadScore() {
+//     const totalScore = document.getElementById("score")
+//     totalScore.textContent = `You scored ${score} out of ${Questions.length}`
+// }
+ 
+ 
+// function nextQuestion() {
+//     if (currQuestion < Questions.length - 1) {
+//         currQuestion++;
+//         loadQues();
+//     } else {
+//         document.getElementById("opt").remove()
+//         document.getElementById("ques").remove()
+//         document.getElementById("btn").remove()
+//         loadScore();
+//     }
+// }
+ 
+// function checkAns() {
+//     const selectedAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
+ 
+//     if (Questions[currQuestion].a[selectedAns].isCorrect) {
+//         score++;
+//         console.log("Correct")
+//         nextQuestion();
+//     } else {
+//         nextQuestion();
+//     }
+// }
+
+
   
 //Header Items
 /// View HighScores link
