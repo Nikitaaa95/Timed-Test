@@ -1,7 +1,17 @@
 :root {
     --purple: #6037ba;
     --pink: rgb(212, 156, 218);
-  }
+    --pinktext: rgb(96, 53, 101);
+}
+
+h1 {
+    color:var(--pinktext);
+    font-weight: bold;
+}
+
+p {
+    color: var(--pinktext)
+}
 
 .time {
     font-size: 20px;
@@ -16,6 +26,8 @@
     font-size: 20px;
     color:var(--purple);
     font-weight: bold;
+    /* if time, you can center the text later */
+
 }
 
 button {
@@ -29,10 +41,12 @@ button {
 }
 
 
+.questions {
+    color: var(--pinktext);
+    font-weight: bold;
+}
 .answers {
-    width: 200px;
-    background-color: var(--pink);
-    color: var(--purple);
+    color: var(--pinktext);
     font-weight: bold;
     list-style: none;
     margin: 12px;
@@ -44,4 +58,3 @@ hr {
     border-color: var(--purple);
     border-width: .5px;
 }
-/* if time, you can center the text later */

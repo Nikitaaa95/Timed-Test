@@ -103,6 +103,7 @@ var buttonEl = document.getElementById("buttonspace")
 SUBMIT.setAttribute("id", "SUBMIT");
 SUBMIT.setAttribute("class", "SUBMIT")
 SUBMIT.textContent = "Submit";
+buttonEl.setAttribute("style","text-align:right")
 buttonEl.appendChild(SUBMIT);
 
 
