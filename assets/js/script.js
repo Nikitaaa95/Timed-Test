@@ -190,6 +190,8 @@ function nextQuestion() {
         callQues();
     } else {
         removalEl.remove();
+        endofQuizwindow();
+
         }
 }})})
 
