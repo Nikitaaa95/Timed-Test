@@ -14,3 +14,5 @@ https://www.tutorialspoint.com/how-to-add-horizontal-line-in-html#:~:text=There%
 Remove Tool
  https://developer.mozilla.org/en-US/docs/Web/API/Element/remove
 
+Setting input fields
+https://www.codewithfaraz.com/content/8/how-to-create-form-fields-dynamically-with-javascript

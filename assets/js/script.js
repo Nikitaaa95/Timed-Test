@@ -19,10 +19,13 @@ var finalMessage = document.createElement("p");
 finalMessage.textContent = "Your final score is " + currentscore + ".";
 var enterinitial = document.createElement("p");
 enterinitial.textContent = "Enter initials:";
+enterinitial.style.display = "inline"
 var initials = document.createElement("input");
 initials.setAttribute('type', 'test');
+initials.style.display = "inline"
 var submitscore = document.createElement("button");
 submitscore.textContent = "Submit";
+submitscore.style.display = "block"
 testEndEl.appendChild(done);
 testEndEl.appendChild(finalMessage);
 testEndEl.appendChild(enterinitial);
@@ -186,9 +189,8 @@ function nextQuestion() {
         curQuestion++;
         callQues();
     } else {
-        questionsEl.remove();
-        answersEl.remove();
-    }
+        removalEl.remove();
+        }
 }})})
 
 
