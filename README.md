@@ -11,3 +11,6 @@ https://www.geeksforgeeks.org/how-to-create-a-simple-javascript-quiz/
 Horizontal Line
 https://www.tutorialspoint.com/how-to-add-horizontal-line-in-html#:~:text=There%20are%20multiple%20ways%20to,and%20it%20requires%20minimal%20code.
 
+Remove Tool
+ https://developer.mozilla.org/en-US/docs/Web/API/Element/remove
+

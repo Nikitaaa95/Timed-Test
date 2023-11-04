@@ -63,7 +63,26 @@ var QuestionContent = [{
     { text: "d) all of the above", Accuracy: false }
     ]
  
-}]
+},
+{
+    q: "String values must be enclosed within _______ when being assigned to variables.",
+    a: [{ text: "a) commas", Accuracy: false},
+    { text: "b) curly brackets", Accuracy: false},
+    { text: "c) quotes", Accuracy: true},
+    { text: "d) parentheses", Accuracy: false}
+    ]
+ 
+},
+{
+    q: "A very useful tool used during development and debuggimg for printing content to the debugger is:",
+    a: [{ text: "a) JavaScript", Accuracy: false},
+    { text: "b) terminal/bash", Accuracy: false},
+    { text: "c) for loops", Accuracy: false},
+    { text: "d) console.log", Accuracy: true}
+    ]
+ 
+}
+]
 
 
 
