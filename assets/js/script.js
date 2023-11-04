@@ -4,11 +4,29 @@ var mainEl = document.getElementById("main");
 var testbodyEl = document.getElementById("testbody");
 var questionsEl = document.getElementById("questions");
 var answersEl = document.getElementById("answers");
-var scorealertEl = document.getElementById("scorealert")
-
+var scorealertEl = document.getElementById("scorealert");
+var removalEl = document.getElementById("removal");
 
 var secondsLeft = 75;
 var currentscore = 0;
+
+//Define end of quiz window
+function endofQuizwindow () {
+var testEndEl = document.getElementById("testend");
+var done = document.createElement("h1");
+done.textContent = "All done!";
+var finalMessage = document.createElement("p");
+finalMessage.textContent = "Your final score is " + currentscore + ".";
+var enterinitial = document.createElement("p");
+enterinitial.textContent = "Enter initials:";
+var submitscore = document.createElement("button");
+submitscore.textContent = "Submit";
+testEndEl.appendChild(done);
+testEndEl.appendChild(finalMessage);
+testEndEl.appendChild(enterinitial);
+//testEndEl.appendChild(initials);
+testEndEl.appendChild(submitscore);
+}
 
 
 
@@ -21,18 +39,20 @@ var currentscore = 0;
       if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         sendcomplete();
+        
       }
   
     }, 1000);
   }
   function sendcomplete() {
     timeEl.textContent = " ";
-    var endalert = document.createElement("p");
-    endalert.setAttribute("class","alert");
-    endalert.setAttribute("style","text-align:right")
-    endalert.innerHTML += 'Times Up! Please refresh page and try again.';
-    mainEl.appendChild(endalert);   
-    testbodyEl.remove(); 
+    endofQuizwindow(); 
+    //var endalert = document.createElement("p");
+    //endalert.setAttribute("class","alert");
+    //endalert.setAttribute("style","text-align:right")
+    //endalert.innerHTML += 'Times Up! Please refresh page and try again.';
+    //mainEl.appendChild(endalert);   
+    removalEl.remove(); 
   }
   setTime();
 
