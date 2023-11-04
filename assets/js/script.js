@@ -19,12 +19,14 @@ var finalMessage = document.createElement("p");
 finalMessage.textContent = "Your final score is " + currentscore + ".";
 var enterinitial = document.createElement("p");
 enterinitial.textContent = "Enter initials:";
+var initials = document.createElement("input");
+initials.setAttribute('type', 'test');
 var submitscore = document.createElement("button");
 submitscore.textContent = "Submit";
 testEndEl.appendChild(done);
 testEndEl.appendChild(finalMessage);
 testEndEl.appendChild(enterinitial);
-//testEndEl.appendChild(initials);
+testEndEl.appendChild(initials);
 testEndEl.appendChild(submitscore);
 }
 
