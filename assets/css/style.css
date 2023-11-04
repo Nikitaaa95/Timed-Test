@@ -2,6 +2,7 @@
     --purple: #6037ba;
     --pink: rgb(212, 156, 218);
     --pinktext: rgb(96, 53, 101);
+    --pinkttext: #60356592;
 }
 
 h1 {
@@ -57,4 +58,8 @@ button {
 hr {
     border-color: var(--purple);
     border-width: .5px;
+}
+
+.scorealert {
+    color: var(--pinkttext);
 }

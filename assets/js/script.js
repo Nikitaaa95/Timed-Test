@@ -13,7 +13,6 @@ var currentscore = 0;
 
 
 
-
   function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
@@ -138,6 +137,8 @@ currentscoreEl.setAttribute("style", "text-align:right");
 scorealertEl.appendChild(currentscoreEl); 
                 //create alert
                 nextQuestion();
+                scorealertEl.textContent = "Correct!";
+                console.log(currentscore);
             } 
             else {
                 secondsLeft--;
@@ -152,6 +153,8 @@ scorealertEl.appendChild(currentscoreEl);
                 secondsLeft--;
 
                 //create alert
+                scorealertEl.textContent = "Wrong! Try again.";
+
             }
         
  
