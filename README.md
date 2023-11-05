@@ -12,6 +12,17 @@ The purpose of this site is for the user to be able to test some basic coding kn
 The user can click the "Start Quiz" button and will be presented with the test questions. The timer will begin when the test is initiated and will drive them towards the end of the quiz. The webpage will tell them if the answer is right or wrong. If they submit the incorrect answer, then the timer will be docked by 10 seconds.
 
 When the quiz is finished, they will be asked to log the highscore and the highest score will be saved down to the local storage and displayed when they request it.
+### Starting Message
+![starting page](assets/images/StartingPage.png)
+
+### Quiz Body
+![image of quiz page](assets/images/Quiz.png)
+
+### Logging Score Screen
+![score form](assets/images/AllDone.png)
+
+### Highscore page
+![startingpage](assets/images/Highscore.png)
 
 ## Credits
 
