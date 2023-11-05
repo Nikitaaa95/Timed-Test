@@ -17,23 +17,32 @@ var done = document.createElement("h1");
 done.textContent = "All done!";
 var finalMessage = document.createElement("p");
 finalMessage.textContent = "Your final score is " + currentscore + ".";
+var forminput = document.createElement("form");
+forminput.setAttribute("class","pure-form")
 var enterinitial = document.createElement("p");
 enterinitial.textContent = "Enter initials:";
 enterinitial.style.display = "inline"
 var initials = document.createElement("input");
-initials.setAttribute('type', 'test');
-initials.style.display = "inline"
+initials.setAttribute("type", "test");
+initials.setAttribute("id","ini");
+initials.style.display = "inline";
 var submitscore = document.createElement("button");
+submitscore.setAttribute = ("type","submit");
 submitscore.textContent = "Submit";
 submitscore.style.display = "block"
+submitscore
 testEndEl.appendChild(done);
 testEndEl.appendChild(finalMessage);
-testEndEl.appendChild(enterinitial);
-testEndEl.appendChild(initials);
-testEndEl.appendChild(submitscore);
+testEndEl.appendChild(forminput);
+forminput.appendChild(enterinitial);
+forminput.appendChild(initials);
+forminput.appendChild(submitscore);
+var initialretrieve = document.getElementById('ini');
+    document.querySelector('form.pure-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log(initialretrieve.value);    
+})
 }
-
-
 
 
   function setTime() {
@@ -141,16 +150,16 @@ quizstarter.addEventListener("click", function() {
 callQues();
 var desEl = document.getElementById("quizsum");
     desEl.remove();
-var SUBMIT = document.createElement("button");
+var starttest = document.createElement("button");
 var buttonEl = document.getElementById("buttonspace")
-SUBMIT.setAttribute("id", "SUBMIT");
-SUBMIT.setAttribute("class", "SUBMIT")
-SUBMIT.textContent = "Submit";
+starttest.setAttribute("id", "starttest");
+starttest.setAttribute("class", "startest")
+starttest.textContent = "Submit";
 buttonEl.setAttribute("style","text-align:right")
-buttonEl.appendChild(SUBMIT);
+buttonEl.appendChild(starttest);
 
 
-    SUBMIT.addEventListener("click", function() {
+    starttest.addEventListener("click", function() {
         const selection = parseInt(document.querySelector('input[name="answer"]:checked').value);
          
             if (QuestionContent[curQuestion].a[selection].Accuracy) {

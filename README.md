@@ -16,3 +16,6 @@ Remove Tool
 
 Setting input fields
 https://www.codewithfaraz.com/content/8/how-to-create-form-fields-dynamically-with-javascript
+
+Form retrieval
+https://stackoverflow.com/questions/21491119/sending-form-text-input-to-console-log-for-testing
