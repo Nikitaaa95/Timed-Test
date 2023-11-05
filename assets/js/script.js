@@ -204,7 +204,7 @@ scorealertEl.appendChild(currentscoreEl);
             }
         
  
- 
+ //pull for next question
 function nextQuestion() {
     if (curQuestion < QuestionContent.length - 1) {
         curQuestion++;
@@ -212,20 +212,16 @@ function nextQuestion() {
     } else {
         removalEl.remove();
         endofQuizwindow();
-
+        clearInterval(timerInterval);
         }
 }})})
 
+//Retrieve highscore
 
+//clear storage option
+//go back option
+
+
+// create submit to go back to opening.
 
   
-//Header Items
-/// View HighScores link
-//// Display top 10 scores
-/// See the timer countdown
-
-//Body Items
-///Include starter language
-////Add starter button - Prompt questions
-///Correct/Incorrect Indicator
-///Final Score - Include initials
