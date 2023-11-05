@@ -64,3 +64,9 @@ hr {
 .scorealert {
     color: var(--pinkttext);
 }
+
+h3 {
+    color:var(--pinktext);
+    font-weight: bold;
+    text-align: center;
+}

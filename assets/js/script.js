@@ -6,13 +6,14 @@ var questionsEl = document.getElementById("questions");
 var answersEl = document.getElementById("answers");
 var scorealertEl = document.getElementById("scorealert");
 var removalEl = document.getElementById("removal");
+var testEndEl = document.getElementById("testend");
 
-var secondsLeft = 75;
+
+var secondsLeft = 30;
 var currentscore = 0;
 
 //Define end of quiz window
 function endofQuizwindow () {
-    var testEndEl = document.getElementById("testend");
     var done = document.createElement("h2");
     done.textContent = "All done!";
     var finalMessage = document.createElement("p");
@@ -65,7 +66,6 @@ function setTime() {
         if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         sendcomplete();
-        
       }
   
     }, 1000);
@@ -212,22 +212,23 @@ function nextQuestion() {
     } else {
         removalEl.remove();
         endofQuizwindow();
-        setTime.remove();
+        //END TIMER FUNCTION
         }
 }})})
 
 
 //Retrieve highscore
-var viewhighscoreEl = document.getElementById("viewhighscore");
+var viewhighscoreEl = document.getElementById("viewhighscores");
 viewhighscoreEl.addEventListener("click", function () {
     renderMessage();
 })
 
 function renderMessage() {
-    testbodyEl.remove();
-    setTime.remove();
+    removalEl.remove();
+        //END TIMER FUNCTION
     var titleHighscore = document.createElement("h3");
     titleHighscore.textContent = "Highscores";
+    testEndEl.appendChild(titleHighscore);
 
 };
 //clear storage option
