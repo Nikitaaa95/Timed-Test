@@ -60,31 +60,6 @@ function endofQuizwindow () {
     }) 
 }
 
-
-function setTime() {
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = "Time Remaining:" + secondsLeft;
-  
-        if(secondsLeft <= 0) {
-        clearInterval(timerInterval);
-        sendcomplete();}
-  
-    }, 1000);
-  }
-  function sendcomplete() {
-    timeEl.textContent = " ";
-    if(!quizEnded){
-    endofQuizwindow();} 
-    //var endalert = document.createElement("p");
-    //endalert.setAttribute("class","alert");
-    //endalert.setAttribute("style","text-align:right")
-    //endalert.innerHTML += 'Times Up! Please refresh page and try again.';
-    //mainEl.appendChild(endalert);   
-    removalEl.remove(); 
-  }
-  setTime();
-
 var QuestionContent = [{
     q: "1) Commonly used data types DO NOT include:",
     a: [{ text: "a) strings", Accuracy: false },
@@ -162,6 +137,29 @@ function callQues() {
 }
 var quizstarter = document.querySelector("#startquiz");
 quizstarter.addEventListener("click", function() {
+    function setTime() {
+        var timerInterval = setInterval(function() {
+            secondsLeft--;
+            timeEl.textContent = "Time Remaining:" + secondsLeft;
+      
+            if(secondsLeft <= 0) {
+            clearInterval(timerInterval);
+            sendcomplete();}
+      
+        }, 1000);
+      }
+      function sendcomplete() {
+        timeEl.textContent = " ";
+        if(!quizEnded){
+        endofQuizwindow();} 
+        //var endalert = document.createElement("p");
+        //endalert.setAttribute("class","alert");
+        //endalert.setAttribute("style","text-align:right")
+        //endalert.innerHTML += 'Times Up! Please refresh page and try again.';
+        //mainEl.appendChild(endalert);   
+        removalEl.remove(); 
+      }
+      setTime();
 callQues();
 var desEl = document.getElementById("quizsum");
     desEl.remove();
