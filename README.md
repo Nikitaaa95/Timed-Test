@@ -22,3 +22,6 @@ https://stackoverflow.com/questions/21491119/sending-form-text-input-to-console-
 
 Reload page
 https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click 
+
+Clear Storage
+https://www.w3schools.com/jsref/met_storage_clear.asp#:~:text=The%20clear()%20method%20removes,object%20or%20a%20sessionStorrage%20object.

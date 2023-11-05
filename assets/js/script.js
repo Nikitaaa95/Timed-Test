@@ -11,6 +11,7 @@ var testEndEl = document.getElementById("testend");
 
 var secondsLeft = 30;
 var currentscore = 0;
+var quizEnded = false;
 
 let highscorelog = "";
 //Define end of quiz window
@@ -65,14 +66,14 @@ function setTime() {
   
         if(secondsLeft <= 0) {
         clearInterval(timerInterval);
-        sendcomplete();
-      }
+        sendcomplete();}
   
     }, 1000);
   }
   function sendcomplete() {
     timeEl.textContent = " ";
-    endofQuizwindow(); 
+    if(!quizEnded){
+    endofQuizwindow();} 
     //var endalert = document.createElement("p");
     //endalert.setAttribute("class","alert");
     //endalert.setAttribute("style","text-align:right")
@@ -212,7 +213,7 @@ function nextQuestion() {
     } else {
         removalEl.remove();
         endofQuizwindow();
-        //END TIMER FUNCTION
+        quizEnded = true;//END TIMER FUNCTION
         }
 }})})
 
@@ -225,6 +226,7 @@ viewhighscoreEl.addEventListener("click", function () {
 
 function renderMessage() {
     removalEl.remove();
+    quizEnded = true;
         //END TIMER FUNCTION
     var titleHighscore = document.createElement("h3");
     titleHighscore.textContent = "Highscores";
