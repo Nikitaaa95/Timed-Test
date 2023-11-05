@@ -12,6 +12,7 @@ var testEndEl = document.getElementById("testend");
 var secondsLeft = 30;
 var currentscore = 0;
 
+let highscorelog = "";
 //Define end of quiz window
 function endofQuizwindow () {
     var done = document.createElement("h2");
@@ -47,10 +48,9 @@ function endofQuizwindow () {
 //log to local storage
     submitscore.addEventListener("click", function(event) {
         event.preventDefault();
-    
-        var highscorelog = {
-        yourinitial: initialretrieve.value,
-        highscore: currentscore.value,
+        highscorelog = {
+            highscore: currentscore,
+            yourinitial: initialretrieve.value,
         };
     
         localStorage.setItem("highscorelog", JSON.stringify(highscorelog));
@@ -229,8 +229,16 @@ function renderMessage() {
     var titleHighscore = document.createElement("h3");
     titleHighscore.textContent = "Highscores";
     testEndEl.appendChild(titleHighscore);
+    var loggedscores = JSON.parse(localStorage.getItem("highscorelog"));
+    console.log(loggedscores);
+    var Testscores = document.createElement("p");
+    Testscores.setAttribute = ("class","testscores")
+    Testscores.textContent = loggedscores.yourinitial + " - " + loggedscores.highscore;
+    Testscores.style.textAlign = "center";
+    Testscores.style.backgroundColor = "rgba(212, 156, 218, 0.693)";
+    testEndEl.appendChild(Testscores);
+  }
 
-};
 //clear storage option
 //go back option
 
