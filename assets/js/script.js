@@ -49,7 +49,7 @@ function endofQuizwindow () {
     
         var highscorelog = {
         yourinitial: initialretrieve.value,
-         highscore: currentscore.value,
+        highscore: currentscore.value,
         };
     
         localStorage.setItem("highscorelog", JSON.stringify(highscorelog));
@@ -212,12 +212,24 @@ function nextQuestion() {
     } else {
         removalEl.remove();
         endofQuizwindow();
-        clearInterval(timerInterval);
+        setTime.remove();
         }
 }})})
 
-//Retrieve highscore
 
+//Retrieve highscore
+var viewhighscoreEl = document.getElementById("viewhighscore");
+viewhighscoreEl.addEventListener("click", function () {
+    renderMessage();
+})
+
+function renderMessage() {
+    testbodyEl.remove();
+    setTime.remove();
+    var titleHighscore = document.createElement("h3");
+    titleHighscore.textContent = "Highscores";
+
+};
 //clear storage option
 //go back option
 
