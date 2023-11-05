@@ -19,3 +19,6 @@ https://www.codewithfaraz.com/content/8/how-to-create-form-fields-dynamically-wi
 
 Form retrieval
 https://stackoverflow.com/questions/21491119/sending-form-text-input-to-console-log-for-testing
+
+Reload page
+https://stackoverflow.com/questions/29884654/button-that-refreshes-the-page-on-click 

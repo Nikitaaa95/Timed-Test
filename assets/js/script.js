@@ -246,6 +246,7 @@ function renderMessage() {
     var clearstorage = document.createElement("button");
     clearstorage.textContent = "Clear Highscores";
     clearstorage.style.diplay = "inline";
+    clearstorage.setAttribute ("onClick", "localStorage.clear();")
     testEndEl.appendChild(clearstorage);
   }
 
