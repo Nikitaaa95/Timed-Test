@@ -232,11 +232,12 @@ function renderMessage() {
     var loggedscores = JSON.parse(localStorage.getItem("highscorelog"));
     console.log(loggedscores);
     var Testscores = document.createElement("p");
-    Testscores.setAttribute = ("class","testscores")
-    Testscores.textContent = loggedscores.yourinitial + " - " + loggedscores.highscore;
-    Testscores.style.textAlign = "center";
-    Testscores.style.backgroundColor = "rgba(212, 156, 218, 0.693)";
-    testEndEl.appendChild(Testscores);
+    Testscores.setAttribute = ("class","testscores");
+    if (loggedscores !== null) {
+        Testscores.textContent = loggedscores.yourinitial + " - " + loggedscores.highscore;
+        Testscores.style.textAlign = "center";
+        Testscores.style.backgroundColor = "rgba(212, 156, 218, 0.693)";
+        testEndEl.appendChild(Testscores);}
     var gobackbtn = document.createElement("button");
     gobackbtn.textContent = "Go Back";
     gobackbtn.style.display = "inline";
