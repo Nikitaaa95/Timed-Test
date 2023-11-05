@@ -46,15 +46,17 @@ function endofQuizwindow () {
         e.preventDefault();
         console.log(initialretrieve.value);    
     })
+    
 //log to local storage
     submitscore.addEventListener("click", function(event) {
         event.preventDefault();
-        highscorelog = {
+        highscorelogcurrentscore = {
             highscore: currentscore,
             yourinitial: initialretrieve.value,
         };
     
         localStorage.setItem("highscorelog", JSON.stringify(highscorelog));
+        window.location.reload();
     }) 
 }
 
@@ -213,7 +215,7 @@ function nextQuestion() {
     } else {
         removalEl.remove();
         endofQuizwindow();
-        quizEnded = true;//END TIMER FUNCTION
+        quizEnded = true;
         }
 }})})
 
@@ -227,7 +229,6 @@ viewhighscoreEl.addEventListener("click", function () {
 function renderMessage() {
     removalEl.remove();
     quizEnded = true;
-        //END TIMER FUNCTION
     var titleHighscore = document.createElement("h3");
     titleHighscore.textContent = "Highscores";
     testEndEl.appendChild(titleHighscore);
