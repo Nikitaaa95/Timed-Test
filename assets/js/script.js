@@ -13,7 +13,7 @@ var currentscore = 0;
 //Define end of quiz window
 function endofQuizwindow () {
     var testEndEl = document.getElementById("testend");
-    var done = document.createElement("h1");
+    var done = document.createElement("h2");
     done.textContent = "All done!";
     var finalMessage = document.createElement("p");
     finalMessage.textContent = "Your final score is " + currentscore + ".";
@@ -27,6 +27,8 @@ function endofQuizwindow () {
     initials.setAttribute("id","ini");
     initials.style.display = "inline";
     var submitscore = document.createElement("button");
+    submitscore.setAttribute = ("class", "submit");
+    submitscore.setAttribute = ("id", "submit");
     submitscore.setAttribute = ("type","submit");
     submitscore.textContent = "Submit";
     submitscore.style.display = "block";

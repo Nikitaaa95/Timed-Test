@@ -5,9 +5,10 @@
     --pinkttext: #60356592;
 }
 
-h1 {
+h2 {
     color:var(--pinktext);
     font-weight: bold;
+    text-align: center;
 }
 
 p {
@@ -27,11 +28,11 @@ p {
     font-size: 20px;
     color:var(--purple);
     font-weight: bold;
+    text-align: center;
     /* if time, you can center the text later */
-
 }
 
-button {
+button{
     height: 35px;
     width: 75px;
     color: var(--purple);
