@@ -241,12 +241,15 @@ function renderMessage() {
     gobackbtn.textContent = "Go Back";
     gobackbtn.style.display = "inline";
     gobackbtn.style.marginRight = "30px";
+    gobackbtn.setAttribute ("onClick", "window.location.reload();")
     testEndEl.appendChild(gobackbtn);
     var clearstorage = document.createElement("button");
     clearstorage.textContent = "Clear Highscores";
     clearstorage.style.diplay = "inline";
     testEndEl.appendChild(clearstorage);
   }
+
+
 
 //clear storage option
 //go back option
