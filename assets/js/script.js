@@ -237,6 +237,15 @@ function renderMessage() {
     Testscores.style.textAlign = "center";
     Testscores.style.backgroundColor = "rgba(212, 156, 218, 0.693)";
     testEndEl.appendChild(Testscores);
+    var gobackbtn = document.createElement("button");
+    gobackbtn.textContent = "Go Back";
+    gobackbtn.style.display = "inline";
+    gobackbtn.style.marginRight = "30px";
+    testEndEl.appendChild(gobackbtn);
+    var clearstorage = document.createElement("button");
+    clearstorage.textContent = "Clear Highscores";
+    clearstorage.style.diplay = "inline";
+    testEndEl.appendChild(clearstorage);
   }
 
 //clear storage option

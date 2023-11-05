@@ -19,6 +19,7 @@ p {
 .time {
     font-size: 20px;
     color:var(--purple);
+    display: inline;
 }
 
 .header {
@@ -35,7 +36,7 @@ p {
 
 button{
     height: 35px;
-    width: 75px;
+    width: fit-content;
     color: var(--purple);
     font-weight: bold; 
     background-color: var(--pink);
@@ -72,3 +73,6 @@ h3 {
     text-align: center;
 }
 
+.testend {
+    text-align: center;
+}
