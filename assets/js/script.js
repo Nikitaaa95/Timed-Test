@@ -12,45 +12,55 @@ var currentscore = 0;
 
 //Define end of quiz window
 function endofQuizwindow () {
-var testEndEl = document.getElementById("testend");
-var done = document.createElement("h1");
-done.textContent = "All done!";
-var finalMessage = document.createElement("p");
-finalMessage.textContent = "Your final score is " + currentscore + ".";
-var forminput = document.createElement("form");
-forminput.setAttribute("class","pure-form")
-var enterinitial = document.createElement("p");
-enterinitial.textContent = "Enter initials:";
-enterinitial.style.display = "inline"
-var initials = document.createElement("input");
-initials.setAttribute("type", "test");
-initials.setAttribute("id","ini");
-initials.style.display = "inline";
-var submitscore = document.createElement("button");
-submitscore.setAttribute = ("type","submit");
-submitscore.textContent = "Submit";
-submitscore.style.display = "block"
-submitscore
-testEndEl.appendChild(done);
-testEndEl.appendChild(finalMessage);
-testEndEl.appendChild(forminput);
-forminput.appendChild(enterinitial);
-forminput.appendChild(initials);
-forminput.appendChild(submitscore);
-var initialretrieve = document.getElementById('ini');
+    var testEndEl = document.getElementById("testend");
+    var done = document.createElement("h1");
+    done.textContent = "All done!";
+    var finalMessage = document.createElement("p");
+    finalMessage.textContent = "Your final score is " + currentscore + ".";
+    var forminput = document.createElement("form");
+    forminput.setAttribute("class","pure-form")
+    var enterinitial = document.createElement("p");
+    enterinitial.textContent = "Enter initials:";
+    enterinitial.style.display = "inline"
+    var initials = document.createElement("input");
+    initials.setAttribute("type", "test");
+    initials.setAttribute("id","ini");
+    initials.style.display = "inline";
+    var submitscore = document.createElement("button");
+    submitscore.setAttribute = ("type","submit");
+    submitscore.textContent = "Submit";
+    submitscore.style.display = "block";
+    testEndEl.appendChild(done);
+    testEndEl.appendChild(finalMessage);
+    testEndEl.appendChild(forminput);
+    forminput.appendChild(enterinitial);
+    forminput.appendChild(initials);
+    forminput.appendChild(submitscore);
+    var initialretrieve = document.getElementById('ini');
     document.querySelector('form.pure-form').addEventListener('submit', function (e) {
-    e.preventDefault();
-    console.log(initialretrieve.value);    
-})
+        e.preventDefault();
+        console.log(initialretrieve.value);    
+    })
+//log to local storage
+    submitscore.addEventListener("click", function(event) {
+        event.preventDefault();
+    
+        var highscorelog = {
+        yourinitial: initialretrieve.value,
+         highscore: currentscore.value,
+        };
+    
+        localStorage.setItem("highscorelog", JSON.stringify(highscorelog));
+    }) 
 }
 
 
-  function setTime() {
+function setTime() {
     var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = "Time Remaining:" + secondsLeft;
+        secondsLeft--;
+        timeEl.textContent = "Time Remaining:" + secondsLeft;
   
-      if(secondsLeft <= 0) {
+        if(secondsLeft <= 0) {
         clearInterval(timerInterval);
         sendcomplete();
         
